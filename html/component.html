@@ -16,7 +16,6 @@
         <!--</li>-->
         <to-list v-bind:content="item"
                  v-for="item in list">
-
         </to-list>
     </ul>
 </div>
@@ -24,22 +23,22 @@
 <script>
 
     // 全局
-    // Vue.component("ToList", {
-    //     props: ['content'],
-    //     template: "<li>{{content}}</li>"
-    // });
-
-    // 局部
-    var ToList = {
+    Vue.component("ToList", {
         props: ['content'],
         template: "<li>{{content}}</li>"
-    };
+    });
+
+    // 局部
+    // var ToList = {
+    //     props: ['content'],
+    //     template: "<li>{{content}}</li>"
+    // };
 
     var app = new Vue({
         el: "#app",
-        components: {
-            ToList: ToList
-        },
+        // components: {
+        //     ToList: ToList
+        // },
         data: {
             list: [],
             inputValue: ""
